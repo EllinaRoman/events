@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 10px;
+}
+
+button.not-selected {
+  border: 1px solid #353b3a;
+  color: black;
+  background-color: white;
+}
+
+button.selected {
+  color: white;
+  background-color: #353b3a;
+  border: none;
+}
+
+.button-div {
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.project-list {
+  column-count: 3;
+  gap: 10px;
+}
+
+.container {
+  max-width: 60%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+img {
+  width: 100%;
+  margin-bottom: 6px;
+}

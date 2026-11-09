@@ -86,13 +86,29 @@ export class Portfolio extends React.Component {
 
   render() {
     const filters = ["All", "Websites", "Flayers", "Business Cards"];
+    const filteredProjects = this.state.projects.filter((x) => {
+      if (this.state.selected === "All") {
+        return true;
+      } else {
+        if (x.category === this.state.selected) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    });
     return (
-      <div>
+      <div className='container'>
+        <div className='button-div'>
         <Toolbar
           filters={filters}
           selected={this.state.selected}
           onSelectFilter={this.onSelectFilter}
         />
+        </div>
+        <div className='project-list'>
+        <ProjectList projects={filteredProjects} />
+        </div>
       </div>
     );
   }
@@ -110,4 +126,8 @@ function Toolbar({ filters, selected, onSelectFilter }) {
       {x}
     </button>
   ));
+}
+
+function ProjectList({ projects }) {
+  return projects.map((x, index) => <img src={x.img} key={x.img + index} />);
 }
